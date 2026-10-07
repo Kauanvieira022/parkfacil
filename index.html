@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f9ff" />
+    <title>Park Fácil · Controle de Pátio</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="sidebar-top">
+        <a class="brand-row" href="#inicio" aria-label="Park Fácil, início">
+          <span class="brand-mark"><img class="icon" src="./figma-assets/d64c0.svg" alt="" /></span>
+          <span class="brand-copy"><strong>Park Fácil</strong><small>Controle de Pátio</small></span>
+        </a>
+
+        <div class="site-wrap">
+          <button class="site-card" type="button" data-action="site">
+            <span class="site-title"><img class="icon" src="./figma-assets/bd9b2.svg" alt="" />Estacionamento Central</span>
+            <span class="site-subtitle">Pátio Principal - Setor A/B</span>
+          </button>
+        </div>
+
+        <nav class="nav-list">
+          <button class="nav-link is-active" type="button" data-nav="Painel" data-target="inicio">
+            <img class="icon" src="./figma-assets/b6981.svg" alt="" /><span>Painel</span>
+          </button>
+          <button class="nav-link" type="button" data-nav="Registrar Entrada" data-action="entry">
+            <img class="icon" src="./figma-assets/1cffc.svg" alt="" /><span>Registrar Entrada</span>
+          </button>
+          <button class="nav-link" type="button" data-nav="Registrar Saída" data-action="exit">
+            <img class="icon" src="./figma-assets/65211.svg" alt="" /><span>Registrar Saída</span>
+          </button>
+          <button class="nav-link" type="button" data-nav="Consultar Vagas" data-target="occupancy">
+            <img class="icon" src="./figma-assets/44067.svg" alt="" /><span>Consultar Vagas</span>
+          </button>
+          <button class="nav-link" type="button" data-nav="Registros" data-target="vehicles">
+            <img class="icon" src="./figma-assets/81d7f.svg" alt="" /><span>Registros</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="account-wrap">
+        <button class="account-card" type="button" data-action="account">
+          <span class="avatar avatar-small"><img class="icon" src="./figma-assets/59e02.svg" alt="" /><i></i></span>
+          <span class="account-copy"><strong>Carlos</strong><small>Turno A · Online</small></span>
+          <img class="icon more-icon" src="./figma-assets/a6214.svg" alt="Mais opções" />
+        </button>
+      </div>
+    </aside>
+
+    <header class="topbar" aria-label="Status do sistema">
+      <div class="topbar-meta">
+        <span class="meta-item"><img class="icon" src="./figma-assets/0dc87.svg" alt="" />07/10/2026</span>
+        <span class="meta-separator">•</span>
+        <span class="meta-item"><img class="icon" src="./figma-assets/fa112.svg" alt="" />14:32:08</span>
+        <span class="status-pill"><i></i>Cancela Operacional</span>
+      </div>
+      <div class="topbar-status">
+        <span class="online-pill"><i></i>SISTEMA ONLINE</span>
+        <span class="avatar avatar-top"><img class="icon" src="./figma-assets/59e02.svg" alt="Carlos" /></span>
+      </div>
+    </header>
+
+    <main class="main-content" id="inicio">
+      <div class="dashboard-container">
+        <section class="welcome-card surface" aria-labelledby="welcome-title">
+          <div class="welcome-copy">
+            <div class="welcome-heading">
+              <h1 id="welcome-title">Olá, Carlos!</h1>
+              <span class="shift-badge"><i></i>Turno A</span>
+              <span class="gate-badge"><img class="icon" src="./figma-assets/68dc8.svg" alt="" />Cancela 01 / 02 OK</span>
+            </div>
+            <p class="location-line"><img class="icon" src="./figma-assets/01021.svg" alt="" />Estacionamento Central <b>•</b> Pátio Principal (Setores A &amp; B)</p>
+          </div>
+          <div class="welcome-actions">
+            <div class="sync-card">
+              <img class="icon" src="./figma-assets/20fd5.svg" alt="" />
+              <span><small>SINCRONIZAÇÃO HORÁRIA</small><strong>07/10/2026 22:52:21</strong></span>
+            </div>
+            <button class="button button-soft support-button" type="button" data-action="support"><img class="icon" src="./figma-assets/8a53f.svg" alt="" />Suporte</button>
+          </div>
+        </section>
+
+        <section class="kpi-grid" aria-label="Indicadores do pátio">
+          <article class="kpi-card surface">
+            <div class="kpi-label"><span>Total de Vagas</span><span class="kpi-icon"><img class="icon" src="./figma-assets/e38b9.svg" alt="" /></span></div>
+            <div class="kpi-value"><strong>50</strong><span>boxes demarcados</span></div>
+            <div class="capacity-bar" aria-label="Capacidade do estacionamento"><i></i><b></b></div>
+            <div class="capacity-legend"><span>Piso Térreo +<br />Sup.</span><span>100%<br />Capacidade</span></div>
+          </article>
+          <article class="kpi-card surface">
+            <div class="kpi-label"><span>Vagas Ocupadas</span><span class="kpi-icon icon-blue"><img class="icon" src="./figma-assets/cdbe6.svg" alt="" /></span></div>
+            <div class="kpi-value"><strong class="blue-text">18</strong><span>veículos ativos</span></div>
+            <div class="kpi-note-row"><span class="occupancy-note"><i></i><b>36% de<br />ocupação</b></span><span class="mono">Pico estimado:<br />17h</span></div>
+          </article>
+          <article class="kpi-card surface">
+            <div class="kpi-label"><span>Vagas Disponíveis</span><span class="kpi-icon icon-green"><img class="icon" src="./figma-assets/f4e55.svg" alt="" /></span></div>
+            <div class="kpi-value"><strong class="green-text">32</strong><span>boxes livres</span></div>
+            <div class="kpi-note-row"><span class="free-note"><i></i><b>64% pátio<br />livre</b></span><span class="mono dark-note">Entrada<br />fluida</span></div>
+          </article>
+          <article class="kpi-card surface tariff-card">
+            <div class="kpi-label"><span>Tarifa Base Vigente</span><span class="kpi-icon"><img class="icon" src="./figma-assets/e523e.svg" alt="" /></span></div>
+            <div class="kpi-value"><strong>R$ 5,00</strong><span>/ hora</span></div>
+            <div class="tariff-note"><span>Fracionado após<br />1ª h</span><span class="tolerance"><b>15m</b><small>Tolerância</small></span></div>
+          </article>
+        </section>
+
+        <section class="quick-actions surface" aria-label="Ações rápidas">
+          <div class="action-group">
+            <button class="button button-dark" type="button" data-action="entry"><img class="icon" src="./figma-assets/e79e9.svg" alt="" />Registrar Entrada <kbd>F2</kbd></button>
+            <button class="button button-primary" type="button" data-action="exit"><img class="icon" src="./figma-assets/eaac2.svg" alt="" />Registrar Saída <kbd>F3</kbd></button>
+            <button class="button button-soft" type="button" data-action="map"><img class="icon" src="./figma-assets/4eebe.svg" alt="" />Mapa de Vagas</button>
+          </div>
+          <div class="action-group">
+            <button class="button button-soft" type="button" data-action="export"><img class="icon" src="./figma-assets/ea4a4.svg" alt="" />Exportar Relatório</button>
+            <button class="button button-icon button-soft" type="button" aria-label="Imprimir relatório" data-action="print"><img class="icon" src="./figma-assets/683d5.svg" alt="" /></button>
+          </div>
+        </section>
+
+        <section class="dashboard-grid" aria-label="Operação do estacionamento">
+          <article class="vehicles-card surface" id="vehicles">
+            <div class="vehicles-heading">
+              <div class="vehicles-title"><h2>Veículos Estacionados</h2><span class="active-count">18 Ativos</span></div>
+              <span class="realtime"><img class="icon" src="./figma-assets/996c3.svg" alt="" />Atualização em tempo real</span>
+            </div>
+            <div class="table-controls">
+              <label class="search-box"><img class="icon" src="./figma-assets/3bf50.svg" alt="" /><input id="vehicle-search" type="search" placeholder="Buscar por placa, ticket ou modelo..." aria-label="Buscar veículos" /></label>
+              <div class="filter-tabs" role="group" aria-label="Filtrar por setor">
+                <button class="filter-tab is-selected" type="button" data-filter="todos">Todos (18)</button>
+                <button class="filter-tab" type="button" data-filter="A">Térreo A (9)</button>
+                <button class="filter-tab" type="button" data-filter="B">Superior B (9)</button>
+              </div>
+              <button class="button button-icon button-soft refresh-button" type="button" aria-label="Atualizar lista" data-action="refresh"><img class="icon" src="./figma-assets/4139b.svg" alt="" /></button>
+            </div>
+            <div class="table-scroll">
+              <table class="vehicle-table">
+                <thead><tr><th>Ticket</th><th>Placa</th><th>Veículo /<br />Modelo</th><th>Setor/Box</th><th>Entrada</th><th>Permanência</th><th>Parcial</th><th>Status</th><th>Ação</th></tr></thead>
+                <tbody id="vehicle-rows"></tbody>
+              </table>
+              <div class="empty-state" id="empty-state" hidden>Nenhum veículo encontrado.</div>
+            </div>
+            <div class="table-footer">
+              <span id="result-count">Exibindo 5 de 18 veículos em permanência</span>
+              <div class="pagination"><button type="button" id="previous-page" class="page-button" disabled>Anterior</button><span id="page-label">Pág 1 de 4</span><button type="button" id="next-page" class="page-button">Próxima</button></div>
+            </div>
+          </article>
+
+          <aside class="right-column" aria-label="Resumo do pátio">
+            <section class="side-card surface" id="occupancy">
+              <div class="side-heading"><img class="icon" src="./figma-assets/1ca07.svg" alt="" /><h2>Ocupação por<br />Setor</h2><span class="side-heading-count">25 Vagas /<br />Setor</span></div>
+              <div class="sector-card">
+                <div class="sector-heading"><strong>Setor A (Térreo)</strong><b>36% Cheio</b></div>
+                <div class="sector-bar"><i></i></div>
+                <div class="sector-stats"><span>9 ocupadas</span><span>16 disponíveis</span></div>
+              </div>
+              <div class="sector-card">
+                <div class="sector-heading"><strong>Setor B (Piso Superior)</strong><b>36% Cheio</b></div>
+                <div class="sector-bar"><i></i></div>
+                <div class="sector-stats"><span>9 ocupadas</span><span>16 disponíveis</span></div>
+              </div>
+              <div class="rotation-note"><img class="icon donut-icon" src="./figma-assets/7fa87.svg" alt="" /><span><strong>Pátio com folga</strong><small>Próxima rotação estimada às<br /><b>15:00</b></small></span></div>
+            </section>
+
+            <section class="side-card surface">
+              <div class="side-title"><img class="icon" src="./figma-assets/8e9ff.svg" alt="" /><h2>Caixa do Turno A</h2><span class="open-badge">Aberto</span></div>
+              <div class="revenue-box"><span>Total Arrecadado</span><div><strong>R$ 30,00</strong><small>7 saídas<br />finalizadas</small></div></div>
+              <div class="finance-grid"><div><span>Ticket Médio</span><b>R$ 10,00</b></div><div><span>Previsão Pátio</span><b>R$ 125,00</b></div></div>
+              <button class="button button-soft cash-button" type="button" data-action="cash"><img class="icon" src="./figma-assets/1e75e.svg" alt="" />Conferência de Sangria &amp; Caixa</button>
+            </section>
+
+            <section class="side-card rules-card surface">
+              <div class="side-title"><img class="icon rules-icon" src="./figma-assets/5eb9b.svg" alt="" /><h2>Regras Vigentes de Cobrança</h2></div>
+              <ul class="rules-list">
+                <li><strong>Tolerância de 15 minutos</strong> para entrada, manobra e desistência sem custo.</li>
+                <li>Cobrança por <strong>fração de hora cheia subsequente</strong> (R$ 5,00 por nova hora iniciada).</li>
+                <li>Perda de ticket acarreta taxa de diária avulsa de <strong>R$ 35,00.</strong></li>
+              </ul>
+              <div class="decree-note"><img class="icon" src="./figma-assets/0d9dc.svg" alt="" /><span>Tabela registrada no Decreto<br />Municipal Nº 4.819</span></div>
+            </section>
+          </aside>
+        </section>
+      </div>
+    </main>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <section class="dialog surface" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+        <div class="dialog-heading"><h2 id="dialog-title"></h2><button class="dialog-close" type="button" aria-label="Fechar" data-action="close">×</button></div>
+        <div id="dialog-content"></div>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
